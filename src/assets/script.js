@@ -19,18 +19,59 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     // Add event listeners to show/hide pop-ups
     const links = document.querySelectorAll('.icon');
-    const popups = document.querySelectorAll('.popup');
+    //const popups = document.querySelectorAll('.popup');
 
     links.forEach(function(link) {
         link.addEventListener('click', function(event) {
             const targetPopupId = link.getAttribute('href').substring(1); // Remove '#'
             const targetPopup = document.getElementById(targetPopupId);
+            if (targetPopup !== null){
+                // Show target popup
+                targetPopup.style.display = 'block';
 
-            // Show target popup
-            targetPopup.style.display = 'block';
-
-            // Prevent default link behavior
-            event.preventDefault();
+                // Prevent default link behavior
+                event.preventDefault();
+            } else {
+                // Initialize Webamp when the page loads
+                const app = document.getElementById("app")
+                const webamp = new Webamp({
+                    
+                    availableSkins: [ 
+                        {
+                            url: "src/assets/Fallout_Pip-Girl_3000_Blue_ v1.wsz",
+                            name: "Fallout Pip Girl Blue",
+                        },
+                        {
+                            url: "src/assets/BangAmp.wsz",
+                            name: "BangAmp",
+                        },
+                        {
+                            url: "src/assets/Maths_Blackboard_Edition.wsz",
+                            name: "Maths Blackboard",
+                        },
+                    ],
+                    initialTracks: [
+                        {
+                            metaData: {
+                                artist: "100 gecs",
+                                title: "stupid horse",
+                            },
+                            url: "src/assets/stupidHorse.mp3"
+                        },
+                        {
+                            metaData: {
+                                artist: "bladee, Ecco2k, Thaiboy Digital",
+                                title: "TL;DR",
+                            },
+                            url: "src/assets/tldr.mp3"
+                        }
+                    ],
+                    initialSkin: {
+                        url: "src/assets/Fallout_Pip-Girl_3000_Blue_ v1.wsz",
+                    }
+                });
+                webamp.renderWhenReady(app);
+            }
         });
     });
 
@@ -43,21 +84,4 @@ document.addEventListener("DOMContentLoaded", function() {
             popup.style.display = 'none'; // Hide popup
         });
     });
-
-    // Initialize Webamp
-    const webamp = new Webamp({
-        initialTracks: [
-            // Add your initial playlist tracks here
-            {
-                metaData: {
-                    artist: "Artist Name",
-                    title: "Song Title",
-                    url: "https://example.com/song.mp3"
-                }
-            }
-        ]
-    });
-
-    // Render Webamp inside the container element
-    webamp.renderWhenReady(document.getElementById("webamp-container"));
 });

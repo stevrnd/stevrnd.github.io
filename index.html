@@ -38,11 +38,11 @@
     </div>
 
     <div class="music">
-        <a class="icon" id="music-icon" href="#popup-music">
+        <div id="app"></div>
+        <a class="icon" id="music-icon" href="#">
             <img src="src/assets/music.png" alt="My Lore">
             <span class="icon-text">Music</span>
         </a>
-
     </div>
 
     <div class="blog">
@@ -62,50 +62,81 @@
     <!-- Pop-up containers -->
     <div id="popup-myLore" class="popup">
         <h2>My Lore</h2>
-        <p>Hi my name is Steven</p>
-        <p>I am 24 years old</p>
-        <p>Studied Computer Science at University of East Anglia</p>
-        <p>Did not do anything computer science related after graduation</p>
-        <p>Now I am at Sparta Global</p>
-        <p>Yippie</p>
-        <p>Passed my ISTQB</p>
-        <p>This is the content of my lore.</p>
+            <div class="popup-content">
+                <p>Hi my name is Steven</p>
+                <p>I am 24 years old</p>
+                <p>Studied Computer Science at University of East Anglia</p>
+                <p>Did not do anything computer science related after graduation</p>
+                <p>Now I am at Sparta Global</p>
+                <p>Yippie</p>
+                <p>Passed my ISTQB</p>
+                <p>This is the content of my lore.</p>
+            </div>
         <button class="close-popup">Close</button>
     </div>
 
 
     <div id="popup-portfolio" class="popup">
         <h2>Portfolio</h2>
-        <p>This is the content of the portfolio.</p>
-        <button class="close-popup">Close</button>
-    </div>
-
-    <div id="popup-music" class="popup">
-        <h2>Music</h2>
-        <p>This is the content of the music.</p>
+            <div class="popup-content">
+                <p>This is the content of the portfolio.</p>
+            </div>
         <button class="close-popup">Close</button>
     </div>
 
     <div id="popup-blog" class="popup">
         <h2>Blog</h2>
-        <p>Body dysmorphia will have me thinking I look like this.</p>
-        <img src="src/assets/aoki.jpg" alt="Steve" class="popup-image">
-        <p>I get constructive feedback and start playing “Many Men”.</p>
+            <div class="popup-content">
+                <p>Body dysmorphia will have me thinking I look like this.</p>
+                <img src="src/assets/aoki.jpg" alt="Steve" class="popup-image">
+
+                <p>I get constructive feedback and start playing “Many Men”.</p>
+
+                <p>Cover letter's looking good!</p>
+                <img src="src/assets/coverLetter.png" alt="Cover" class="popup-image">
+
+                <p>I can’t believe pineapple bun is just melon pan……….. aka no pineapple</p>
+
+                <p>Men will lose the girl of their dreams and then immediately change their phone background to a grainy jpeg of guts or roronoa zoro</p>
+
+                <p>That once every 6-8 months relisten of Yeezus that reaffirms your existence</p>
+            </div>
         <button class="close-popup">Close</button>
     </div>
 
     <div id="popup-faq" class="popup">
         <h2>FAQ</h2>
-        <p>This is the content of the faq.</p>
+            <div class="popup-content">
+                <em>
+                    <strong>Q: woof woof</strong>
+                </em>
+                <br>
+                <p>
+                    A: meow meow
+                </p>
+                <br>
+
+                <em>
+                    <strong>Q: arf arf</strong>
+                </em>
+                <br>
+                <p>
+                    A: mauw mauw
+                </p>
+                <br>
+            </div>
         <button class="close-popup">Close</button>
     </div>
 
 
     <script src="src/assets/script.js"></script>
 
+    <!-- Include Webamp script -->
+    <script src="https://unpkg.com/webamp"></script>
+
     <footer>
         <p> By Steven Diep</p>
-        <p> Made possible by W3 Schools and ChatGPT (could have done it in Wix...)</p>
+        <p> Made possible by W3Schools and ChatGPT (could have done it in Wix...)</p>
     </footer>
 </body>
 </html>
